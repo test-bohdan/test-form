@@ -69,21 +69,52 @@
 
         document.getElementById("submitFormBtn").addEventListener("click", function(event) {
             event.preventDefault();
+
+            // XMLHttpRequest variant
+
+            // if (validateForm()) {
+            //     var form = document.getElementById("myForm");
+            //     var formData = new FormData(form);
+            //     var xhr = new XMLHttpRequest();
+            //     xhr.open("POST", "php/submit_form.php", true);
+            //     xhr.onload = function() {
+            //         if (this.status == 200) {
+            //             alert("Form submitted successfully!");
+            //             form.reset();
+            //         } else {
+            //             alert("Error in form submission");
+            //         }
+            //     };
+            //     xhr.send(formData);
+            // }
+
+            // fetch variant
+
             if (validateForm()) {
                 var form = document.getElementById("myForm");
                 var formData = new FormData(form);
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "php/submit_form.php", true);
-                xhr.onload = function() {
-                    if (this.status == 200) {
+
+                fetch("php/submit_form.php", {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.text();
+                        } else {
+                            throw new Error('Response error');
+                        }
+                    })
+                    .then(text => {
                         alert("Form submitted successfully!");
                         form.reset();
-                    } else {
+                    })
+                    .catch(error => {
                         alert("Error in form submission");
-                    }
-                };
-                xhr.send(formData);
+                        console.error('Error fetch operation:', error);
+                    });
             }
+
         });
     });
 
