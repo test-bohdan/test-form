@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Bohdan</title>
+    <link rel="stylesheet" href="dist/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrp">
+    <h1 class="heading">Reach Out and <span class="t-dark">Connect</span> With Us</h1>
+    <p class="sub-heading">Bridging Your Ideas with Our Expertise</p>
+    <form id="myForm">
+        <input type="text" id="name" name="name" placeholder="Name *">
+        <div class="error" id="errorName"></div>
+        <input type="email" id="email" name="email" placeholder="Email *">
+        <div class="error" id="errorEmail"></div>
+        <input type="tel" id="phone" name="phone" placeholder="Phone *">
+        <div class="error" id="errorPhone"></div>
+        <div class="f-row-inp">
+            <input type="password" id="password" name="password" placeholder="Password *">
+            <span onclick="togglePasswordVisibility()" id="togglePassword" class="eye-icon">
+                <svg fill=none height=15 viewBox="0 0 22 15"width=22 xmlns=http://www.w3.org/2000/svg><path d="M21.9065 7.11753C19.6621 3.15003 15.4814 0 11 0C6.51859 0 2.33789 3.15003 0.0935156 7.11753C-0.0311719 7.35003 -0.0311719 7.63503 0.0935156 7.86753C2.33789 11.8425 6.51859 15 11 15C15.4814 15 19.6621 11.8425 21.9065 7.86753C22.0312 7.63503 22.0312 7.35003 21.9065 7.11753ZM11 12.1875C8.46958 12.1875 6.4159 10.0875 6.4159 7.50003C6.4159 4.91253 8.46958 2.81253 11 2.81253C13.5304 2.81253 15.5841 4.91253 15.5841 7.50003C15.5841 10.0875 13.5304 12.1875 11 12.1875Z"fill=#2A3B53 /><path d="M11 10.6869C12.7216 10.6869 14.1172 9.25981 14.1172 7.4994C14.1172 5.73899 12.7216 4.3119 11 4.3119C9.27842 4.3119 7.88281 5.73899 7.88281 7.4994C7.88281 9.25981 9.27842 10.6869 11 10.6869Z"fill=#2A3B53 /></svg>
+            </span>
+        </div>
+        <div class="error" id="errorPassword"></div>
+        <div class="f-row-sel">
+            <select id="city" name="city">
+                <option value="">Choose your city *</option>
+                <option value="city1">City 1</option>
+                <option value="city1">City 2</option>
+                <option value="city1">City 3</option>
+            </select>
+        </div>
+        <div class="error" id="errorCity"></div>
+        <div class="f-row">
+            <div class="privacy">
+                <input type="checkbox" id="privacyPolicy" name="privacyPolicy">
+                <label for="privacyPolicy">I have read and accepted <a target="_blank" href="#">privacy policy</a></label>
+                <div class="error" id="errorPrivacyPolicy"></div>
+            </div>
+            <button class="btn" id="submitFormBtn">Submit</button>
+        </div>
+    </form>
+</div>
+<script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('password');
+        var toggleIcon = document.getElementById('togglePassword');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.innerHTML = '<svg fill=none height=15 viewBox="0 0 22 15"width=22 xmlns=http://www.w3.org/2000/svg><path d="M21.9065 7.11753C19.6621 3.15003 15.4814 0 11 0C6.51859 0 2.33789 3.15003 0.0935156 7.11753C-0.0311719 7.35003 -0.0311719 7.63503 0.0935156 7.86753C2.33789 11.8425 6.51859 15 11 15C15.4814 15 19.6621 11.8425 21.9065 7.86753C22.0312 7.63503 22.0312 7.35003 21.9065 7.11753ZM11 12.1875C8.46958 12.1875 6.4159 10.0875 6.4159 7.50003C6.4159 4.91253 8.46958 2.81253 11 2.81253C13.5304 2.81253 15.5841 4.91253 15.5841 7.50003C15.5841 10.0875 13.5304 12.1875 11 12.1875Z"fill=#BA5B5B /><path d="M11 10.6869C12.7216 10.6869 14.1172 9.25981 14.1172 7.4994C14.1172 5.73899 12.7216 4.3119 11 4.3119C9.27842 4.3119 7.88281 5.73899 7.88281 7.4994C7.88281 9.25981 9.27842 10.6869 11 10.6869Z"fill=#BA5B5B /></svg>';
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.innerHTML = '<svg fill=none height=15 viewBox="0 0 22 15"width=22 xmlns=http://www.w3.org/2000/svg><path d="M21.9065 7.11753C19.6621 3.15003 15.4814 0 11 0C6.51859 0 2.33789 3.15003 0.0935156 7.11753C-0.0311719 7.35003 -0.0311719 7.63503 0.0935156 7.86753C2.33789 11.8425 6.51859 15 11 15C15.4814 15 19.6621 11.8425 21.9065 7.86753C22.0312 7.63503 22.0312 7.35003 21.9065 7.11753ZM11 12.1875C8.46958 12.1875 6.4159 10.0875 6.4159 7.50003C6.4159 4.91253 8.46958 2.81253 11 2.81253C13.5304 2.81253 15.5841 4.91253 15.5841 7.50003C15.5841 10.0875 13.5304 12.1875 11 12.1875Z"fill=#2A3B53 /><path d="M11 10.6869C12.7216 10.6869 14.1172 9.25981 14.1172 7.4994C14.1172 5.73899 12.7216 4.3119 11 4.3119C9.27842 4.3119 7.88281 5.73899 7.88281 7.4994C7.88281 9.25981 9.27842 10.6869 11 10.6869Z"fill=#2A3B53 /></svg>';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("#myForm input, #myForm select").forEach(function(input) {
+            input.addEventListener("input", function() {
+                validateField(this);
+            });
+        });
+
+        document.getElementById("submitFormBtn").addEventListener("click", function(event) {
+            event.preventDefault();
+            if (validateForm()) {
+                var form = document.getElementById("myForm");
+                var formData = new FormData(form);
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "php/submit_form.php", true);
+                xhr.onload = function() {
+                    if (this.status == 200) {
+                        alert("Form submitted successfully!");
+                        form.reset();
+                    } else {
+                        alert("Error in form submission");
+                    }
+                };
+                xhr.send(formData);
+            }
+        });
+    });
+
+    function validateField(input) {
+        var fieldId = input.id;
+        var value = input.value.trim();
+        var isValid = true;
+
+        if (input.type === "checkbox") {
+            if (!input.checked) {
+                showError(fieldId, "You must accept the privacy policy");
+                isValid = false;
+            } else {
+                clearError(fieldId);
+            }
+        } else {
+            var value = input.value.trim();
+            if (!value) {
+                showError(fieldId, "The field cannot be empty");
+                isValid = false;
+            } else if (fieldId === "email" && !validateEmail(value)) {
+                showError(fieldId, "Invalid email format");
+                isValid = false;
+            } else if (fieldId === "phone" && !validatePhone(value)) {
+                showError(fieldId, "Invalid phone format. Example: +380939176205");
+                isValid = false;
+            } else {
+                clearError(fieldId);
+            }
+        }
+
+        return isValid;
+    }
+
+    function validateForm() {
+        var isValid = true;
+        document.querySelectorAll("#myForm input, #myForm select").forEach(function(input) {
+            isValid = validateField(input) && isValid;
+        });
+        return isValid;
+    }
+
+    function validateEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    function validatePhone(phone) {
+        return /^\+380\d{9}$/.test(phone);
+    }
+
+    function showError(fieldId, message) {
+        var errorElementId = "error" + fieldId.charAt(0).toUpperCase() + fieldId.slice(1);
+        var errorElement = document.getElementById(errorElementId);
+        var inputElement = document.getElementById(fieldId);
+
+        errorElement.textContent = message;
+        inputElement.classList.add("is-error");
+        inputElement.classList.remove("no-error");
+    }
+
+    function clearError(fieldId) {
+        var errorElementId = "error" + fieldId.charAt(0).toUpperCase() + fieldId.slice(1);
+        var errorElement = document.getElementById(errorElementId);
+        var inputElement = document.getElementById(fieldId);
+
+        errorElement.textContent = "";
+        inputElement.classList.remove("is-error");
+        inputElement.classList.add("no-error");
+    }
+
+    document.getElementById("privacyPolicy").addEventListener("change", function() {
+        if (this.checked) {
+            clearError(this.id);
+        } else {
+            showError(this.id, "You must accept the privacy policy");
+        }
+    });
+</script>
+</body>
+</html>
